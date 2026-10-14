@@ -1,0 +1,68 @@
+:root{--bg:#fffaf0;--ink:#3a1c2e;--maroon:#8a1538;--saffron:#c75b00;--gold:#e8a317;--line:#ecd9ae;--soft:#6b5563}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;color:var(--ink);background:radial-gradient(ellipse at 50% 0,#fff 0,var(--bg) 55%,#fff1d6 100%) fixed;
+font:18px/1.75 "Noto Sans Devanagari","Mukta",system-ui,sans-serif;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main{position:relative;z-index:1;max-width:480px;margin:0 auto;padding:96px 20px 12px;text-align:center}
+[hidden]{display:none!important}
+.title{font-family:"Noto Serif Devanagari","Tiro Devanagari Hindi",Georgia,serif;font-weight:700;color:var(--maroon);font-size:clamp(2.2rem,10vw,3rem);line-height:1.5;margin:.1em 0 .2em}
+.lead{color:var(--soft);margin:0 0 22px;font-size:1.02rem;line-height:1.8}
+.from{margin:4px 0 0;font-size:1.15rem;color:var(--soft)}
+.who{display:block;font-family:"Noto Serif Devanagari",Georgia,serif;font-size:clamp(1.9rem,9vw,2.6rem);font-weight:700;color:var(--saffron);line-height:1.5;word-break:break-word}
+.greet{font-family:"Noto Serif Devanagari",Georgia,serif;font-size:1.3rem;line-height:1.9;margin:10px auto 20px;max-width:22em}
+
+/* single diya, lights up by itself */
+.diya{position:relative;width:130px;height:110px;margin:0 auto 6px}
+.bowl{position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(#f0a02a,#b9560c);border-radius:10px 10px 65px 65px/12px 12px 46px 46px;box-shadow:0 6px 14px rgba(150,70,0,.25)}
+.wick{position:absolute;left:50%;bottom:44px;width:4px;height:12px;margin-left:-2px;background:#4a2a14;border-radius:2px}
+.flame{position:absolute;left:50%;bottom:54px;width:28px;height:58px;margin-left:-14px;border-radius:50% 50% 50% 50%/65% 65% 35% 35%;transform-origin:50% 100%;
+background:radial-gradient(ellipse at 50% 75%,#fffbe0 0,#ffd34d 35%,#ff8a1f 70%,rgba(255,106,0,.1) 100%);animation:ignite 1.4s .4s ease-out both,flick 1.8s 1.8s ease-in-out infinite}
+.glow{position:absolute;left:50%;bottom:30px;width:260px;height:260px;margin-left:-130px;border-radius:50%;background:radial-gradient(circle,rgba(255,170,40,.38),rgba(255,170,40,0) 65%);animation:glow 1.6s .4s ease-out both,pulse 2.4s 2s ease-in-out infinite;pointer-events:none}
+@keyframes ignite{0%{transform:scale(0);opacity:0}30%{opacity:1}100%{transform:scale(1)}}
+@keyframes flick{0%,100%{transform:scale(1) rotate(-2deg)}50%{transform:scale(1.08,.95) rotate(2deg)}}
+@keyframes glow{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.7}}
+
+form{text-align:left;margin-top:6px}
+label{display:block;margin:14px 0 6px;font-weight:700;color:var(--maroon)}
+input{width:100%;padding:14px 16px;border-radius:14px;border:1.5px solid var(--line);background:#fff;color:var(--ink);font:inherit;box-shadow:0 1px 0 rgba(0,0,0,.02)}
+input:focus-visible,.btn:focus-visible,.icon-btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #1a5fd0;outline-offset:2px}
+.err{color:#b3123b;font-size:15px;min-height:1.3em;margin:4px 0 0;line-height:1.5}
+.btn{display:block;width:100%;margin-top:14px;padding:15px 18px;border:0;border-radius:999px;font-family:inherit;font-weight:700;font-size:1.05rem;line-height:1.4;color:#fff;cursor:pointer;
+background:linear-gradient(135deg,#e8780a,#c24e00);box-shadow:0 6px 18px rgba(199,91,0,.3);transition:transform .15s}
+.btn:active{transform:scale(.97)}.btn:disabled{opacity:.6;cursor:wait}
+.btn.wa{background:#168a45;box-shadow:0 6px 18px rgba(22,138,69,.3)}
+.btn.ghost{background:#fff;color:var(--saffron);border:1.5px solid var(--saffron);box-shadow:none}
+.actions{margin-top:8px}
+.note{font-size:14.5px;line-height:1.7;color:var(--soft);margin:14px 0 0}
+.note a,footer a{color:var(--maroon)}
+#banner{display:block;width:100%;max-height:280px;object-fit:cover;border-radius:18px;margin:0 auto 18px;box-shadow:0 8px 24px rgba(120,60,0,.18)}
+.icon-btn{position:fixed;top:calc(10px + env(safe-area-inset-top));right:12px;z-index:5;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:20px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+details{margin:34px 0 0;text-align:left;font-size:15px;line-height:1.8;color:var(--soft);border-top:1px solid var(--line);padding-top:14px}
+summary{cursor:pointer;font-weight:700;color:var(--maroon)}
+footer{position:relative;z-index:1;max-width:480px;margin:0 auto;text-align:center;color:var(--soft);font-size:13px;line-height:1.7;padding:6px 20px 28px}
+
+/* greeting text appears automatically */
+#reveal .title,#reveal .from,#reveal .greet,#reveal #banner,#reveal .actions{opacity:0;animation:rise .9s ease forwards}
+#reveal .title{animation-delay:.9s}#reveal .from{animation-delay:1.3s}#reveal .greet{animation-delay:1.7s}#reveal #banner{animation-delay:2.1s}#reveal .actions{animation-delay:2.4s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,::after,::before{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important;scroll-behavior:auto!important}}
+
+#toran{position:absolute;top:0;left:0;right:0;height:100px;z-index:1;pointer-events:none;max-width:560px;margin:0 auto}
+#toran svg{display:block;width:100%;height:100%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.icon-btn{top:auto;bottom:calc(14px + env(safe-area-inset-bottom))}
+
+.diya{position:relative;width:170px;height:128px;margin:62px auto 96px}
+#dsvg{position:relative;z-index:2;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 8px 10px rgba(120,50,0,.25))}
+.fl{transform-box:fill-box;transform-origin:50% 100%;animation:ignite 1.4s .4s ease-out both,flick 1.7s 1.8s ease-in-out infinite}
+.f2{animation-delay:.55s,1.9s}.f3{animation-delay:.7s,2s}
+.glow{position:absolute;z-index:1;left:50%;top:-70px;width:300px;height:300px;margin-left:-150px;border-radius:50%;background:radial-gradient(circle,rgba(255,170,40,.4),rgba(255,170,40,0) 62%);animation:glow 1.6s .4s ease-out both,pulse 2.4s 2s ease-in-out infinite;pointer-events:none}
+#rangoli{position:absolute;z-index:0;left:50%;top:-76px;width:280px;height:280px;margin-left:-140px;pointer-events:none;opacity:.8}
+#rangoli svg{display:block;width:100%;height:100%;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes ignite{0%{transform:scale(0);opacity:0}35%{opacity:1}100%{transform:scale(1)}}
+@keyframes flick{0%,100%{transform:scale(1) rotate(-1.5deg)}50%{transform:scale(1.07,.95) rotate(1.5deg)}}
+@keyframes glow{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.72}}

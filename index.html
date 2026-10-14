@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>शुभ दीपावली 🪔 दिवाली विश स्टूडियो</title>
+<meta name="description" content="अपने नाम से दीपावली की खास शुभकामना बनाएं और WhatsApp पर शेयर करें।">
+<meta property="og:type" content="website">
+<meta property="og:title" content="शुभ दीपावली 🪔 आपके लिए एक खास विश">
+<meta property="og:description" content="अपनी दिवाली विश बनाएं और अपनों को भेजें।">
+<meta property="og:image" content="https://YOUR_DOMAIN/assets/og.png">
+<meta name="theme-color" content="#fffaf0">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪔</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<button id="sound" class="icon-btn" type="button" aria-pressed="false" aria-label="ध्वनि चालू करें">🔇</button>
+<div id="toran" aria-hidden="true"></div>
+<main>
+  <div class="diya" aria-hidden="true">
+    <div id="rangoli"></div><i class="glow"></i>
+    <svg id="dsvg" viewBox="0 0 200 150">
+      <defs>
+        <linearGradient id="bw" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4a63c"/><stop offset=".55" stop-color="#c2610f"/><stop offset="1" stop-color="#8a3a08"/></linearGradient>
+        <linearGradient id="gd" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b8860b"/><stop offset=".5" stop-color="#ffe08a"/><stop offset="1" stop-color="#b8860b"/></linearGradient>
+        <radialGradient id="oil" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#ffe9a6"/><stop offset="1" stop-color="#d9831a"/></radialGradient>
+        <linearGradient id="fo" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#ff7a00"/><stop offset="1" stop-color="#ffb52e"/></linearGradient>
+      </defs>
+      <ellipse cx="100" cy="143" rx="46" ry="6" fill="#6b2b05" opacity=".35"/>
+      <path d="M62 138h76q4 5-2 8H64q-6-3-2-8z" fill="#8a3a08"/>
+      <path d="M16 86Q4 84 2 76Q14 82 26 80ZM184 86Q196 84 198 76Q186 82 174 80Z" fill="#d07414"/>
+      <path d="M14 86Q22 138 100 140Q178 138 186 86Z" fill="url(#bw)"/>
+      <path d="M26 100Q30 128 70 134" fill="none" stroke="#fff" stroke-opacity=".28" stroke-width="5" stroke-linecap="round"/>
+      <path d="M24 106Q100 128 176 106" fill="none" stroke="url(#gd)" stroke-width="3.4"/>
+      <g fill="#ffe08a"><circle cx="40" cy="114" r="2.4"/><circle cx="56" cy="119" r="2.4"/><circle cx="73" cy="122" r="2.4"/><circle cx="90" cy="124" r="2.4"/><circle cx="110" cy="124" r="2.4"/><circle cx="127" cy="122" r="2.4"/><circle cx="144" cy="119" r="2.4"/><circle cx="160" cy="114" r="2.4"/></g>
+      <path d="M62 130Q100 136 138 130" fill="none" stroke="url(#gd)" stroke-width="2.4" opacity=".8"/>
+      <ellipse cx="100" cy="86" rx="86" ry="15" fill="#e8962a"/>
+      <ellipse cx="100" cy="86" rx="86" ry="15" fill="none" stroke="url(#gd)" stroke-width="3"/>
+      <ellipse cx="100" cy="88" rx="70" ry="10.5" fill="url(#oil)"/>
+      <rect x="97.5" y="70" width="5" height="18" rx="2.5" fill="#3a2010"/>
+      <g class="fl"><path d="M100 14C116 38 128 54 118 70C113 80 87 80 82 70C72 54 84 38 100 14Z" fill="url(#fo)"/></g>
+      <g class="fl f2"><path d="M100 30C110 46 117 58 111 70C107 77 93 77 89 70C83 58 90 46 100 30Z" fill="#ffd34d"/></g>
+      <g class="fl f3"><path d="M100 48C106 58 109 66 105 72C102 76 98 76 95 72C91 66 94 58 100 48Z" fill="#fffbe6"/></g>
+    </svg>
+  </div>
+
+  <section id="home">
+    <h1 class="title">शुभ दीपावली</h1>
+    <p class="lead">अपना नाम और मोबाइल नंबर डालें और अपनों के लिए दिवाली की खास विश बनाएं।</p>
+    <form id="form" novalidate>
+      <label for="name">आपका नाम</label>
+      <input id="name" name="name" autocomplete="name" maxlength="40" required aria-describedby="name-err">
+      <p class="err" id="name-err" role="alert"></p>
+      <label for="phone">मोबाइल नंबर</label>
+      <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="14" placeholder="98XXXXXXXX" required aria-describedby="phone-err">
+      <p class="err" id="phone-err" role="alert"></p>
+      <button id="create" class="btn" type="submit">मेरी दिवाली विश बनाएं</button>
+      <p class="err" id="form-err" role="alert"></p>
+      <p class="note">विश बनाने पर आपका नाम और मोबाइल नंबर वेबसाइट संचालक के Telegram बॉट को भेजा जाएगा। <a href="#privacy">गोपनीयता नीति</a></p>
+    </form>
+  </section>
+
+  <section id="wish" hidden>
+    <div id="reveal" hidden>
+      <h2 class="title">शुभ दीपावली</h2>
+      <p class="from"><span id="who" class="who"></span> की ओर से</p>
+      <p class="greet">आपको और आपके परिवार को दीपावली की हार्दिक शुभकामनाएँ!</p>
+      <img id="banner" alt="दीपावली बैनर" hidden>
+      <div id="share" class="actions" hidden>
+        <button id="wa" class="btn wa" type="button">WhatsApp पर शेयर करें</button>
+        <button id="copy" class="btn ghost" type="button">लिंक कॉपी करें</button>
+        <p class="note">पहली बार WhatsApp बटन दबाने पर एक प्रायोजित (विज्ञापन) पेज नए टैब में खुलेगा। लौटकर दोबारा दबाने पर WhatsApp खुलेगा।</p>
+      </div>
+      <div class="actions"><button id="mine" class="btn" type="button">अपनी दिवाली विश बनाएं</button></div>
+      <p id="status" class="note" role="status"></p>
+    </div>
+    <div id="invalid" hidden>
+      <h2 class="title">यह विश नहीं मिली</h2>
+      <p class="lead">यह लिंक गलत है या अधूरा है। आप अपनी नई विश बना सकते हैं।</p>
+      <button id="new" class="btn" type="button">अपनी दिवाली विश बनाएं</button>
+    </div>
+  </section>
+
+  <details id="privacy">
+    <summary>गोपनीयता नीति</summary>
+    <p><b>उद्देश्य:</b> आपकी विश बनाना और संचालक को सूचित करना। <b>प्राप्तकर्ता:</b> केवल वेबसाइट संचालक का Telegram बॉट। <b>सार्वजनिक डेटा:</b> सिर्फ आपका नाम (शेयर लिंक में); मोबाइल नंबर कभी लिंक में नहीं जाता।</p>
+    <p><b>विज़िटर IP:</b> साइट खुलने पर आपका IP पता और देश (नाम/नंबर नहीं) संचालक के Telegram पर एक बार प्रति सत्र भेजा जाता है, ताकि विज़िट की जानकारी और दुरुपयोग पर नज़र रखी जा सके। इसे किसी तीसरे पक्ष को नहीं दिया जाता।</p>
+    <p><b>विज्ञापन:</b> शेयर बटन पहली बार दबाने पर हमारे विज्ञापन-साझेदार का पेज नए टैब में खुलता है; उस पेज पर उसकी अपनी गोपनीयता नीति और कुकीज़ लागू होती हैं।</p>
+    <p><b>अवधि:</b> नाम शेयर लिंक में ही रहता है; हमारे सर्वर पर कोई विश रिकॉर्ड नहीं रखा जाता। Telegram संदेश संचालक के चैट में तब तक रहते हैं जब तक वे हटाएँ। हम OTP, संपर्क सूची या लोकेशन नहीं माँगते।</p>
+    <p><b>संपर्क:</b> नाम/नंबर हटवाने के लिए वेबसाइट संचालक से सीधे संपर्क करें।</p>
+  </details>
+</main>
+<footer>सुरक्षा और आँकड़ों के लिए विज़िट पर आपका IP पता संचालक को भेजा जाता है। <a href="#privacy">विवरण</a></footer>
+<script src="app.js"></script>
+</body>
+</html>

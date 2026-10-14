@@ -1,8 +1,8 @@
 "use strict";
 /* ⚠️ अस्थायी: टोकन ब्राउज़र में दिखता है (कोई भी देख सकता है)। README देखें, बाद में functions में ले जाएँ। */
 const CONFIG = {
-  BOT_TOKEN: "PASTE_BOT_TOKEN_HERE",
-  CHAT_ID: "PASTE_CHAT_ID_HERE",
+  BOT_TOKEN: "8390602758:AAGUSMtAy1GBERRr_jit4GNqpVWcwVouZU8",
+  CHAT_ID: "6320680594",
   // अपने 5-6 बैनर की सीधी इमेज लिंक (https://...) यहाँ डालें
   // पहली बार WhatsApp बटन दबाने पर यह विज्ञापन लिंक नए टैब में खुलेगा (खाली/गलत हो तो सीधा WhatsApp)
   AD_LINK: "PASTE_DIRECT_AD_LINK",
